@@ -1,0 +1,6 @@
+<h1 class="text-center">Locations</h1>
+<div *ngIf="locationData" class="container">
+  <div class="" *ngFor="let location of locationData">
+    <location-card [locationInfo]="location"></location-card>
+  </div>
+</div>

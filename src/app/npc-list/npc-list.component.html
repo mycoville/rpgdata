@@ -1,0 +1,18 @@
+<h1 class="text-center">NPCs</h1>
+<div class="text-center">
+  <a class="btn btn-success m-2" routerLink="/npc-add">+ Add new NPC</a>
+</div>
+<div *ngIf="npcData" class="container">
+  <div class="card m-2 shadow-sm row" *ngFor="let npc of npcData">
+    <npc-card
+      *ngIf="npc.location"
+      [npcInfo]="npc"
+      [npcLocation]="locationData[npc.location]"
+    ></npc-card>
+    <npc-card
+      *ngIf="!npc.location"
+      [npcInfo]="npc"
+      [npcLocation]="noLocation"
+    ></npc-card>
+  </div>
+</div>

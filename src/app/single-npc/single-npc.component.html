@@ -1,0 +1,17 @@
+<div *ngIf="singleNpc" class="container">
+  <div class="card m-3 p-3 shadow-sm">
+    <h1 class="text-center">{{ singleNpc.name }}</h1>
+    <div class="row">
+      <div class="col-8">
+        <p>{{ singleNpc.notes }}</p>
+      </div>
+      <div class="col-4">
+        <p *ngIf="singleNpc.age">AGE: {{ singleNpc.age }}</p>
+        <p *ngIf="singleNpc.currentAttitude">
+          ATTITUDE: {{ singleNpc.currentAttitude }}
+        </p>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>

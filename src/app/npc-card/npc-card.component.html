@@ -1,0 +1,40 @@
+<div class="row p-2" *ngIf="npcInfo">
+  <div class="col-8">
+    <div class="row">
+      <div class="col-3 text-center">
+        <img
+          class="img-fluid"
+          style="max-height: 50px; max-width: 150px"
+          src="{{
+            npcInfo.image ? npcInfo.image : './assets/character_placeholder.svg'
+          }}"
+        />
+      </div>
+      <div class="col-9">
+        <h2>{{ npcInfo.name }}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+    <p>GENERAL INFO:</p>
+    <p>
+      Location:
+      <a *ngIf="npcLocation.id" [routerLink]="['/locations', npcLocation.id]">{{
+        npcLocation.name
+      }}</a>
+    </p>
+  </div>
+  <div class="col-12">
+    <div class="row p-2">
+      <div class="col-8">
+        <p>NOTES:</p>
+        <p>{{ npcInfo.notes }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="text-center p-2">
+    <a class="btn btn-primary" [routerLink]="['/npcs', npcInfo.id]"
+      ><fa-icon [icon]="faEye"></fa-icon> READ MORE</a
+    >
+  </div>
+</div>
